@@ -402,3 +402,49 @@ a {
     padding: 56px 0;
   }
 }
+/* ========== 修正兴趣栏目图片大小 ========== */
+
+/* 整个图片网格 */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* 每张图片外面的卡片 */
+.gallery-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+/* 控制兴趣栏目图片大小 */
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  background-color: #f1f5f9;
+  padding: 8px;
+}
+
+/* 图片下面的文字 */
+.gallery-item p {
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #52606d;
+  text-align: center;
+}
+
+/* 手机端一行一张 */
+@media (max-width: 640px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    height: 240px;
+  }
+}
