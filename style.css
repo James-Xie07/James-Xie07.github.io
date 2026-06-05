@@ -928,3 +928,90 @@ section {
     height: 145px;
   }
 }
+
+
+/* =========================================================
+   去除全部光晕效果
+   说明：保留太空深色背景、白色星星、半透明模块；
+   去掉蓝紫色光晕、文字发光、卡片发光、按钮发光和装饰光圈。
+   ========================================================= */
+
+/* 1. 取消全局 hover 发光变量 */
+:root {
+  --shadow-glow: var(--shadow);
+}
+
+/* 2. 去掉背景星云/首页光晕，只保留深色太空底色和 body::before 的白色星星 */
+body {
+  background:
+    linear-gradient(135deg, var(--space-0) 0%, var(--space-1) 42%, var(--space-2) 100%) !important;
+}
+
+body::after {
+  display: none !important;
+}
+
+.hero,
+.section-light,
+.section-dark {
+  background: transparent !important;
+}
+
+/* 3. 去掉首页装饰光圈和项目卡片右上角光圈 */
+.hero::before,
+.hero::after,
+.project-card::before {
+  display: none !important;
+}
+
+/* 4. 去掉文字发光 */
+.logo,
+.logo::before,
+.hero h1,
+.hero h1 span,
+.section h2,
+.date,
+.skill-card h3::before {
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* 5. 去掉按钮、标签、链接、图片、头像等发光阴影 */
+.eyebrow,
+.btn:hover,
+.nav-links a:hover,
+.project-tag,
+.project-links a:hover,
+.gallery-item:hover,
+.profile-photo,
+.image-lightbox img,
+.lightbox-close,
+.fade-expand span,
+.fade-expand:hover span {
+  box-shadow: none !important;
+}
+
+/* 6. 卡片 hover 时保留普通深色阴影，不再出现蓝色外发光 */
+.profile-card:hover,
+.skill-card:hover,
+.project-card:hover,
+.experience-card:hover,
+.hobby-card:hover,
+.timeline-item:hover {
+  box-shadow: var(--shadow) !important;
+}
+
+/* 7. 去掉图片背景里的局部光晕 */
+.gallery-item img {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 8. 保持弹窗背景为纯深色，不加光晕 */
+.image-lightbox {
+  background: rgba(3, 7, 17, 0.90) !important;
+}
+
+/* 9. 如果后续还有模块标题下划线，继续保持隐藏 */
+.section h2::after {
+  display: none !important;
+}
