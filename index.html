@@ -477,6 +477,13 @@
       }
     });
   }
+  function updateStarParallax() {
+  const shift = window.scrollY * -0.18;
+  document.documentElement.style.setProperty("--star-shift", shift + "px");
+}
+
+updateStarParallax();
+window.addEventListener("scroll", updateStarParallax, { passive: true });
 
 </script>
 </body>
