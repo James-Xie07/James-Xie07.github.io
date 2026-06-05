@@ -331,5 +331,51 @@
   <footer class="footer">
     <p>© 2026 谢镇邦 Zhenbang Xie. All rights reserved.</p>
   </footer>
+  <!-- 图片放大预览层 -->
+<div class="image-lightbox" id="imageLightbox">
+  <button class="lightbox-close" type="button" id="lightboxClose">×</button>
+  <img id="lightboxImage" src="" alt="放大图片" />
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+</div>
+
+<script>
+  const lightbox = document.getElementById("imageLightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+  const lightboxClose = document.getElementById("lightboxClose");
+
+  document.querySelectorAll(".gallery-item img").forEach(function (img) {
+    img.addEventListener("click", function () {
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+
+      const caption = img.closest(".gallery-item").querySelector("p");
+      lightboxCaption.textContent = caption ? caption.textContent : "";
+
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    lightboxImage.src = "";
+    document.body.style.overflow = "";
+  }
+
+  lightboxClose.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", function (event) {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+  });
+</script>
 </body>
 </html>
