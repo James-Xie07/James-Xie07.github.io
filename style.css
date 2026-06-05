@@ -773,7 +773,7 @@ section {
   backdrop-filter: blur(12px);
 }
 
-/* ========== 顶部施工提示牌：按你的要求保持不改动 ========== */
+/* ========== 顶部施工提示牌 ========== */
 .construction-banner {
    position: sticky;
    top: 0;
@@ -842,11 +842,16 @@ section {
   box-shadow: 0 0 26px rgba(117, 244, 255, 0.28);
 }
 
+/* 展开后，“收起绘画作品”按钮居中显示 */
 .fade-gallery.expanded .fade-expand {
   position: static;
+  width: 100%;
   height: auto;
-  padding: 16px 0 0;
+  padding: 18px 0 0;
   background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ========== 响应式 ========== */
