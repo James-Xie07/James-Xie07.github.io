@@ -669,3 +669,70 @@ section {
     height: 240px;
   }
 }
+/* ========== 点击图片放大预览 ========== */
+
+/* 鼠标移到兴趣图片上时显示可点击 */
+.gallery-item img {
+  cursor: zoom-in;
+}
+
+/* 放大图片的黑色背景层 */
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 18px;
+  background: rgba(17, 39, 26, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+/* 显示状态 */
+.image-lightbox.active {
+  display: flex;
+}
+
+/* 放大后的图片 */
+.image-lightbox img {
+  max-width: 92vw;
+  max-height: 84vh;
+  object-fit: contain;
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 8px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* 关闭按钮 */
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #173b24;
+  font-size: 30px;
+  line-height: 42px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+/* 图片说明文字 */
+.lightbox-caption {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  max-width: 86vw;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #173b24;
+  font-size: 14px;
+  text-align: center;
+}
