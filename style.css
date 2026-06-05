@@ -751,19 +751,4 @@ section {
    border-bottom: 1px solid #f0d98a;
    letter-spacing: 0.02em;
 }
-/* ========== 兴趣栏目折叠模块：可选美化 ========== */
-.hobby-details {
-  margin-top: 12px;
-}
 
-.hobby-details summary {
-  cursor: pointer;
-  font-weight: 800;
-  color: var(--green-deep, #2f7d4f);
-  padding: 10px 0;
-  list-style-position: inside;
-}
-
-.hobby-details .gallery {
-  margin-top: 12px;
-}
