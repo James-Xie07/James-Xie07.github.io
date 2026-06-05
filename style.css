@@ -59,21 +59,36 @@ body {
   overflow-x: hidden;
 }
 
-/* 星空层：不用图片，直接用 CSS 画星星 */
+/* 星空层：只用白色星星，不同大小，更随机 */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
   pointer-events: none;
+
   background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.92) 0 1px, transparent 1.4px),
-    radial-gradient(circle, rgba(117, 244, 255, 0.68) 0 1px, transparent 1.4px),
-    radial-gradient(circle, rgba(183, 153, 255, 0.62) 0 1.2px, transparent 1.6px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.35) 0 0.8px, transparent 1.2px);
-  background-size: 120px 120px, 180px 180px, 240px 240px, 70px 70px;
-  background-position: 0 0, 42px 68px, 88px 30px, 30px 40px;
-  opacity: 0.72;
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 0.7px, transparent 1.1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.55) 0 1.4px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.35) 0 0.5px, transparent 0.9px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.85) 0 1.8px, transparent 2.5px);
+
+  background-size:
+    137px 181px,
+    223px 157px,
+    317px 241px,
+    89px 113px,
+    421px 337px;
+
+  background-position:
+    17px 31px,
+    91px 47px,
+    173px 109px,
+    43px 79px,
+    251px 193px;
+
+  opacity: 0.78;
 }
 
 /* 轻微星云光晕 */
