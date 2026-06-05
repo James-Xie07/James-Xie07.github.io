@@ -751,4 +751,77 @@ section {
    border-bottom: 1px solid #f0d98a;
    letter-spacing: 0.02em;
 }
+/* ========== 绘画作品：两行预览 + 渐变点击展开 ========== */
+.fade-gallery {
+  position: relative;
+  max-height: 565px;  /* 约等于两行图片的高度，可按需要调大或调小 */
+  overflow: hidden;
+  border-radius: 22px;
+  transition: max-height 0.45s ease;
+}
 
+/* 展开后显示全部 */
+.fade-gallery.expanded {
+  max-height: none;
+  overflow: visible;
+}
+
+/* 渐变点击区域 */
+.fade-expand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 155px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.86) 48%,
+    #ffffff 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 18px;
+  z-index: 5;
+}
+
+/* 渐变区域中的按钮文字 */
+.fade-expand span {
+  display: inline-block;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: var(--green-pale, #f0faf3);
+  color: var(--green-deep, #2f7d4f);
+  border: 1px solid var(--green-light, #dff3e4);
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 10px 22px rgba(47, 125, 79, 0.12);
+  transition: all 0.2s ease;
+}
+
+.fade-expand:hover span {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(47, 125, 79, 0.18);
+}
+
+/* 展开后，按钮变成普通“收起”按钮，不再盖住图片 */
+.fade-gallery.expanded .fade-expand {
+  position: static;
+  height: auto;
+  padding: 16px 0 0;
+  background: transparent;
+}
+
+/* 手机端也预览约两张图 */
+@media (max-width: 640px) {
+  .fade-gallery {
+    max-height: 555px;
+  }
+
+  .fade-expand {
+    height: 145px;
+  }
+}
