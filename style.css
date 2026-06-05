@@ -736,3 +736,15 @@ section {
   font-size: 14px;
   text-align: center;
 }
+/* ========== 顶部施工提示牌 ========== */
+.construction-banner {
+  width: 100%;
+  padding: 10px 16px;
+  text-align: center;
+  background: #fff7d6;
+  color: #5c4a00;
+  font-weight: 800;
+  font-size: 15px;
+  border-bottom: 1px solid #f0d98a;
+  letter-spacing: 0.02em;
+}
