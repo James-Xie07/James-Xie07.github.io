@@ -51,9 +51,6 @@ body {
   line-height: 1.75;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 18% 12%, rgba(117, 244, 255, 0.18), transparent 28%),
-    radial-gradient(circle at 78% 18%, rgba(183, 153, 255, 0.18), transparent 28%),
-    radial-gradient(circle at 50% 82%, rgba(255, 158, 232, 0.10), transparent 32%),
     linear-gradient(135deg, var(--space-0) 0%, var(--space-1) 42%, var(--space-2) 100%);
   background-attachment: fixed;
   overflow-x: hidden;
@@ -82,11 +79,11 @@ body::before {
     421px 337px;
 
   background-position:
-    17px 31px,
-    91px 47px,
-    173px 109px,
-    43px 79px,
-    251px 193px;
+  17px calc(31px + var(--star-shift, 0px)),
+  91px calc(47px + var(--star-shift, 0px)),
+  173px calc(109px + var(--star-shift, 0px)),
+  43px calc(79px + var(--star-shift, 0px)),
+  251px calc(193px + var(--star-shift, 0px));
 
   opacity: 0.78;
 }
