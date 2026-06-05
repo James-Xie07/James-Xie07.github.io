@@ -7,7 +7,7 @@
   <title>谢镇邦 Zhenbang Xie | Personal Website</title>
   <meta name="description" content="谢镇邦的个人介绍网站，展示教育背景、工程项目、技能与联系方式。" />
 
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 
 <body>
@@ -268,9 +268,7 @@
               而数字绘画让色彩绘画更加便利，虽然相比实际使用颜料和画笔总有些不习惯的地方，但相信在不断练习后能更运用自如。
             </p>
 
-            <details class="project-details hobby-details">
-              <summary>展开查看绘画作品</summary>
-
+            <div class="fade-gallery" id="drawingGallery">
               <div class="gallery">
               <div class="gallery-item">
                 <img src="images/drawing-1.jpg" alt="加载失败……" />
@@ -308,7 +306,10 @@
                 <p>绘画作品 8</p>
               </div>
             </div>
-            </details>
+              <button class="fade-expand" type="button" id="drawingExpandBtn">
+                <span>点击展开全部绘画作品</span>
+              </button>
+            </div>
           </article>
 
           <article class="hobby-card">
@@ -460,6 +461,22 @@
       closeLightbox();
     }
   });
+
+  const drawingGallery = document.getElementById("drawingGallery");
+  const drawingExpandBtn = document.getElementById("drawingExpandBtn");
+
+  if (drawingGallery && drawingExpandBtn) {
+    drawingExpandBtn.addEventListener("click", function () {
+      drawingGallery.classList.toggle("expanded");
+
+      if (drawingGallery.classList.contains("expanded")) {
+        drawingExpandBtn.querySelector("span").textContent = "收起绘画作品";
+      } else {
+        drawingExpandBtn.querySelector("span").textContent = "点击展开全部绘画作品";
+      }
+    });
+  }
+
 </script>
 </body>
 </html>
