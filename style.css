@@ -389,14 +389,7 @@ section {
 }
 
 .section h2::after {
-  content: "";
-  display: block;
-  width: 82px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--cyan), var(--violet), transparent);
-  border-radius: 999px;
-  margin-top: 12px;
-  box-shadow: 0 0 14px rgba(117, 244, 255, 0.38);
+  display: none;
 }
 
 .two-column {
