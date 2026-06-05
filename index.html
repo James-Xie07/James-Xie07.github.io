@@ -307,7 +307,7 @@
               </div>
             </div>
               <button class="fade-expand" type="button" id="drawingExpandBtn">
-                <span>展开<br>˅</span>
+                <span>More ˅</span>
               </button>
             </div>
           </article>
@@ -470,9 +470,9 @@
       drawingGallery.classList.toggle("expanded");
 
       if (drawingGallery.classList.contains("expanded")) {
-        drawingExpandBtn.querySelector("span").textContent = "收起";
+        drawingExpandBtn.querySelector("span").textContent = "Close";
       } else {
-        drawingExpandBtn.querySelector("span").textContent = "展开";
+        drawingExpandBtn.querySelector("span").textContent = "More ˅";
       }
     });
   }
