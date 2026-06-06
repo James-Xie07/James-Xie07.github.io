@@ -974,3 +974,9 @@ body::after {
 .section h2::after {
   display: none !important;
 }
+.language-switch {
+  border: 1px solid rgba(117, 244, 255, 0.45) !important;
+  color: var(--cyan) !important;
+  font-weight: 900;
+  background: rgba(117, 244, 255, 0.12) !important;
+}
