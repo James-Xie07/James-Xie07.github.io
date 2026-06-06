@@ -411,7 +411,7 @@
           </p>
         </div>
         <div class="experience-image">
-          <img src="images/posters.jpg" alt="加载失败……" />
+          <img src="images/poster1.jpg" alt="加载失败……" />
         </div>
       </article>
 
@@ -453,18 +453,30 @@
   const lightboxCaption = document.getElementById("lightboxCaption");
   const lightboxClose = document.getElementById("lightboxClose");
 
-  document.querySelectorAll(".gallery-item img").forEach(function (img) {
-    img.addEventListener("click", function () {
-      lightboxImage.src = img.src;
-      lightboxImage.alt = img.alt;
+  document.querySelectorAll(".gallery-item img, .experience-image img").forEach(function (img) {
+  img.addEventListener("click", function () {
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
 
-      const caption = img.closest(".gallery-item").querySelector("p");
-      lightboxCaption.textContent = caption ? caption.textContent : "";
+    const galleryItem = img.closest(".gallery-item");
+    const experienceCard = img.closest(".experience-card");
 
-      lightbox.classList.add("active");
-      document.body.style.overflow = "hidden";
-    });
+    let captionText = "";
+
+    if (galleryItem && galleryItem.querySelector("p")) {
+      captionText = galleryItem.querySelector("p").textContent;
+    } else if (experienceCard && experienceCard.querySelector("h3")) {
+      captionText = experienceCard.querySelector("h3").textContent;
+    } else {
+      captionText = img.alt || "";
+    }
+
+    lightboxCaption.textContent = captionText;
+
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
   });
+});
 
   function closeLightbox() {
     lightbox.classList.remove("active");
