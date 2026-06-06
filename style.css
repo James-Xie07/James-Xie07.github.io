@@ -980,3 +980,35 @@ body::after {
   font-weight: 900;
   background: rgba(117, 244, 255, 0.12) !important;
 }
+/* ========== 实习经历列表与图片 ========== */
+.experience-list {
+  display: grid;
+  gap: 24px;
+}
+
+.experience-with-image {
+  display: grid;
+  grid-template-columns: 1.5fr 260px;
+  gap: 24px;
+  align-items: center;
+}
+
+.experience-image img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  border: 1px solid rgba(117, 244, 255, 0.28);
+}
+
+/* 手机端：图片自动放到文字下方 */
+@media (max-width: 800px) {
+  .experience-with-image {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-image img {
+    height: 220px;
+  }
+}
