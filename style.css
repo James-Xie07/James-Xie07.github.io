@@ -1,5 +1,6 @@
 /* =========================================================
    谢镇邦个人网站 style.css
+   简化整理版：删除重复覆盖与冲突代码，保留局部发光效果
    主题：太空科幻风 + 繁星背景 + 半透明白色模块
    说明：最上方“正在施工中……”提示牌样式保持不改动
    ========================================================= */
@@ -166,36 +167,9 @@ section {
   padding: 108px 0 96px;
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 22% 20%, rgba(117, 244, 255, 0.16), transparent 32%),
-    radial-gradient(circle at 82% 28%, rgba(183, 153, 255, 0.17), transparent 30%),
-    transparent;
+  background: transparent;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 340px;
-  height: 340px;
-  right: -110px;
-  bottom: -120px;
-  border-radius: 50%;
-  border: 1px solid rgba(117, 244, 255, 0.28);
-  box-shadow: inset 0 0 70px rgba(117, 244, 255, 0.08), 0 0 70px rgba(117, 244, 255, 0.08);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  left: 7%;
-  bottom: 12%;
-  border-radius: 38px;
-  background: linear-gradient(135deg, rgba(117, 244, 255, 0.10), rgba(183, 153, 255, 0.09));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transform: rotate(18deg);
-}
 
 .hero-grid {
   position: relative;
@@ -371,9 +345,7 @@ section {
 }
 
 .section-light {
-  background:
-    radial-gradient(circle at 15% 10%, rgba(117, 244, 255, 0.08), transparent 28%),
-    radial-gradient(circle at 90% 75%, rgba(183, 153, 255, 0.08), transparent 30%);
+  background: transparent;
 }
 
 .section h2 {
@@ -482,18 +454,6 @@ section {
 .project-card {
   position: relative;
   overflow: hidden;
-}
-
-.project-card::before {
-  content: "";
-  position: absolute;
-  width: 86px;
-  height: 86px;
-  right: -32px;
-  top: -32px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(117, 244, 255, 0.20), transparent 68%);
-  border: 1px solid rgba(117, 244, 255, 0.16);
 }
 
 .project-card h3 {
@@ -639,9 +599,7 @@ section {
   height: 220px;
   object-fit: contain;
   display: block;
-  background:
-    radial-gradient(circle at 50% 35%, rgba(117, 244, 255, 0.10), transparent 52%),
-    rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.08);
   padding: 10px;
   cursor: zoom-in;
 }
@@ -657,10 +615,7 @@ section {
 
 /* ========== 联系 ========== */
 .section-dark {
-  background:
-    radial-gradient(circle at 18% 20%, rgba(117, 244, 255, 0.12), transparent 28%),
-    radial-gradient(circle at 80% 70%, rgba(183, 153, 255, 0.12), transparent 30%),
-    rgba(0, 0, 0, 0.10);
+  background: transparent;
 }
 
 .section-dark h2 {
@@ -917,8 +872,14 @@ section {
   }
 
   .gallery-item img {
-    height: 240px;
-  }
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 10px;
+  cursor: zoom-in;
+}
 
   .fade-gallery {
     max-height: 555px;
@@ -929,51 +890,6 @@ section {
   }
 }
 
-
-/* =========================================================
-   去除全部光晕效果
-   说明：保留太空深色背景、白色星星、半透明模块；
-   去掉蓝紫色光晕、文字发光、卡片发光、按钮发光和装饰光圈。
-   ========================================================= */
-
-
-/* 2. 去掉背景星云/首页光晕，只保留深色太空底色和 body::before 的白色星星 */
-body {
-  background:
-    linear-gradient(135deg, var(--space-0) 0%, var(--space-1) 42%, var(--space-2) 100%) !important;
-}
-
-body::after {
-  display: none !important;
-}
-
-.hero,
-.section-light,
-.section-dark {
-  background: transparent !important;
-}
-
-/* 3. 去掉首页装饰光圈和项目卡片右上角光圈 */
-.hero::before,
-.hero::after,
-.project-card::before {
-  display: none !important;
-}
-
-/* 7. 去掉图片背景里的局部光晕 */
-.gallery-item img {
-  background: rgba(255, 255, 255, 0.08) !important;
-}
-
-/* 8. 保持弹窗背景为纯深色，不加光晕 */
-.image-lightbox {
-  background: rgba(3, 7, 17, 0.90) !important;
-}
-
-/* 9. 如果后续还有模块标题下划线，继续保持隐藏 */
-.section h2::after {
-  display: none !important;
-}
 .language-switch {
   border: 1px solid rgba(117, 244, 255, 0.45) !important;
   color: var(--cyan) !important;
@@ -1000,6 +916,7 @@ body::after {
   border-radius: 18px;
   display: block;
   border: 1px solid rgba(117, 244, 255, 0.28);
+  cursor: zoom-in;
 }
 
 /* 手机端：图片自动放到文字下方 */
