@@ -909,16 +909,6 @@ section {
   align-items: center;
 }
 
-.experience-image img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 18px;
-  display: block;
-  border: 1px solid rgba(117, 244, 255, 0.28);
-  cursor: zoom-in;
-}
-
 /* 手机端：图片自动放到文字下方 */
 @media (max-width: 800px) {
   .experience-with-image {
@@ -963,4 +953,14 @@ section {
   .experience-photo-row img {
     height: 220px;
   }
+}
+/* ========== 实习经历图片：使用 gallery 样式 ========== */
+.experience-gallery {
+  margin-top: 18px;
+}
+
+/* 实习经历里的图片完整显示，不裁剪 */
+.experience-gallery .gallery-item img {
+  height: 220px;
+  object-fit: contain;
 }
